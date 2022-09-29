@@ -10,3 +10,4 @@ echo Value of a is $a;
 echo ${a}
 echo $b
 
+echo Value of D is $d
