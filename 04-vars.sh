@@ -4,7 +4,7 @@ a=10
 
 b=abc
 
-Date_cmd =$(Date +%F)
+Date_cmd =$(date +%F)
 ### No datatype in bash script everything is a string by default
 echo Value of a is $a;
 
