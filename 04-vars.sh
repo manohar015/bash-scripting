@@ -13,7 +13,7 @@ echo $b
 
 echo Value of D is $d
 
-echo Gud Morning Todays date is $Date_cmd
+echo Gud Morning Todays date is "$Date_cmd"
 
 LOGGEDIN_USERS=$(who | wc -l)
 
