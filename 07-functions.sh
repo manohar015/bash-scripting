@@ -18,6 +18,6 @@ stat() {
 # Calling the function
 
 stat
-sleep 5
+sleep 1
 stat 
-sleep 5
+sleep 1
