@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "I am installing catalogue"
+echo "I am installing catalogue !"

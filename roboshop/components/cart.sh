@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "I am installing cart"
+echo "I am installing cart !"
