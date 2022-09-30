@@ -4,13 +4,13 @@ set -e
 
 source components/common.sh
 
-echo -n " Installing nginx"
+echo -n "Installing nginx"
 yum install nginx -y >> /tmp/frontend.log
 
 stat $?
 
 systemctl enable nginx
-echo -n " Starting nginx"
+echo -n "Starting nginx"
 systemctl start nginx
 
 stat $?
