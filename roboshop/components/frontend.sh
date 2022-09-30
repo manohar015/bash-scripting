@@ -4,7 +4,7 @@ set -e
 
 source components/common.sh
 
-echo " Installing nginx"
+echo -n " Installing nginx"
 yum install nginx -y >> /tmp/frontend.log
 
 if [ $? -eq 0 ] ; then
@@ -14,7 +14,7 @@ else
 fi
 
 systemctl enable nginx
-echo " Starting nginx"
+echo -n " Starting nginx"
 systemctl start nginx
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
