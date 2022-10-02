@@ -19,8 +19,8 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n "Start the  ${COMPONENT} Service."
-systemctl enable mangod >> /tmp/${COMPONENT}.log
-systemctl start mangod
+systemctl enable mongod >> /tmp/${COMPONENT}.log
+systemctl start mongod
 stat $?
 
 echo -n "Downloading the schema."
