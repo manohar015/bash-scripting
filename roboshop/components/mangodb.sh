@@ -15,7 +15,7 @@ yum install -y mongodb-org >> /tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Updating the  ${COMPONENT} Config."
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangod.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n "Start the  ${COMPONENT} Service."
@@ -35,8 +35,8 @@ stat $?
 
 echo -n "Injexting yhr $COMPONENT schema"
 cd mongodb-main
-mango < catalogue.js >> /tmp/${COMPONENT}.log
-mango < users.js >> /tmp/${COMPONENT}.log
+mongo < catalogue.js >> /tmp/${COMPONENT}.log
+mongo < users.js >> /tmp/${COMPONENT}.log
 stat $?
 
 echo -n -e "\n ################ $COMPONENT  Configuration Completed #######\n"
