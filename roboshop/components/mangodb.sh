@@ -30,15 +30,15 @@ stat $?
 
 echo -n "Extracting the $COMPONENT Schema"
 
-cd /tmp && unzip -o mongodb.zip 
+cd /tmp && unzip -o mongodb.zip /tmp/${COMPONENT}.log
 stat $?
 
-echo "Injexting yhr $COMPONENT schema"
+echo -n "Injexting yhr $COMPONENT schema"
 cd mongodb-main
 mango < catalogue.js >> /tmp/${COMPONENT}.log
 mango < users.js >> /tmp/${COMPONENT}.log
 stat $?
 
-echo -n "################ $COMPONENT  Configuration Completed #######"
+echo -n -e "\n ################ $COMPONENT  Configuration Completed #######\n"
 
 
