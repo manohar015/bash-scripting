@@ -30,7 +30,7 @@ stat $?
 
 echo -n "Extracting the $COMPONENT Schema"
 
-cd /tmp && unzip -o mongodb.zip /tmp/${COMPONENT}.log
+cd /tmp && unzip -o mongodb.zip >> /tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Injexting yhr $COMPONENT schema"
