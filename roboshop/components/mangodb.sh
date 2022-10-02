@@ -4,14 +4,14 @@ set -e
 
 source components/common.sh
 
-COMPONENT=mangodb
+COMPONENT=mongodb
 
 echo -n "Configuring the Mango db Repo"
 curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/mongo.repo
 stat $?
 
 echo -n "Installing ${COMPONENT}:"
-yum install -y mangodb-org >> /tmp/${COMPONENT}.log
+yum install -y mongodb-org >> /tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Updating the  ${COMPONENT} Config."
