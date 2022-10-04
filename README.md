@@ -14,8 +14,5 @@ This is the repositiry where we are going to learn bash and would like to automa
 
 ### PS: Ensure you are inside the repo to execute the commands : We will perform clone once and pull multiple times
 
-## test
-
-### testing123
 
 
