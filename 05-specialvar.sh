@@ -4,9 +4,9 @@
 # $1 to $9 -> Num of max variables to password from command prompt
 
 # $* 
-$#
-$$
-$?
+# $#
+# $$
+# $?
 
 a=10
 b=$1
@@ -18,4 +18,9 @@ echo Value of b is : $b
 echo Value of c is : $c
 echo Value of d is : $d
 
-echo "Script name that you r running is : $0";
+echo $*
+echo $$
+echo $#
+echo $?
+
+echo -e  "Script name that you r running is : $0";
