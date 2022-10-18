@@ -2,7 +2,7 @@
 
 ACTION=$1
 
-if [ "$ACTION" == "start" ] ; then
+if [ "$ACTION" == "start" -o ] ; then
     echo "Selected Choice is start"
 elif [ "$ACTION" == "stop" ] ; then
     echo "Selected Choice is Stop"
