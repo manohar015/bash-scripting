@@ -21,7 +21,7 @@ echo -n "Adding $FUSER user"
 id ${FUSER} || useradd ${FUSER} >>/tmp/${COMPONENT}.log
 stat $?
 
-echo "Downloading  $COMPONENT"
+echo -n "Downloading  $COMPONENT"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
 stat $?
 
