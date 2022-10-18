@@ -1,3 +1,3 @@
 #!/bin/bash
 
- echo -e "\e[m36 Hello My Name is Mano \e[0m"
+ echo -e "\e[36m My Name is Verma \e[0m"
