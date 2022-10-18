@@ -1,18 +1,15 @@
 #!/bin/bash
-ID=$(id -u)
-if [ $ID -ne 0 ] ; then
-    echo -e "\e[36m Try executing the script with sudo or a root \e[0m"
-    exit 1
-fi
 
-yum install nginx -y
+source components/common.sh
+
+yum install nginx -y  >>/tmp/frontend.log
 systemctl enable nginx
 systemctl start nginx
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 cd /usr/share/nginx/html
 rm -rf *
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip >>/tmp/frontend.log
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
