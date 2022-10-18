@@ -9,7 +9,7 @@ echo ${a};
 
 echo "value of d: $d"
 
-DATE=date +%F
+DATE=$(date +%F)
 echo "Hello Gud Morning Todays date is : $DATE"
 
 
