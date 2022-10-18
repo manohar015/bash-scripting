@@ -22,7 +22,7 @@ id ${FUSER} >>/tmp/${COMPONENT}.log || useradd ${FUSER}
 stat $?
 
 echo -n "Downloading  $COMPONENT: "
-curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
+curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Cleanup of old $COMPONENT content: " 
