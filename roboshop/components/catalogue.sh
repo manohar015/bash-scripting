@@ -18,7 +18,7 @@ yum install nodejs -y >>/tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Adding $FUSER user"
-useradd ${FUSER}
+id ${FUSER} || useradd ${FUSER}
 stat $?
 
 echo "Downloading  $COMPONENT"
