@@ -1,8 +1,8 @@
 frontend:
 	bash components/frontend.sh
 
-catalague:
-	bash components/catalague.sh
+catalogue:
+	bash components/catalogue.sh
 
 cart:
 	bash components/cart.sh
