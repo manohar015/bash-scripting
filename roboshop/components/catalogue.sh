@@ -8,7 +8,7 @@ FUSER=roboshop
 
 echo -n "Configure the Yum Repos for nodejs:"
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash >>/tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Installing  nodejs:"
@@ -42,3 +42,5 @@ stat $?
 echo -n "Installing ${COMPONENT} Dependencies"
 cd $COMPONENT && npm install &>>/tmp/${COMPONENT}.log
 stat $?
+
+echo -n "Configuring the systemd file : "
