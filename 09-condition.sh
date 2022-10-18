@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ACTION=$1
+
 case $ACTION in
 start)
     echo "Starting XYZ Service"
