@@ -13,5 +13,5 @@ restart)
     echo "Restarting the service"
     ;;
   *)
-  echo  -e "Valid options are Start or STOP or RESTART only"
+  echo  -e "\e[36m Valid options are Start or STOP or RESTART only\e[0m"
 esac
