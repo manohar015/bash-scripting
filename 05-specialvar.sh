@@ -19,8 +19,12 @@ echo Value of c is : $c
 echo Value of d is : $d
 
 echo $*
+echo \n;
+
 echo $$
+echo \n;
 echo $#
+echo \n;
 echo $?
 
 echo -e  "Script name that you r running is : $0";
