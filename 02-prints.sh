@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Line1\n Line2"
+echo -e "Line1\nLine2"
 
 ## Escape sequence chars 
 
