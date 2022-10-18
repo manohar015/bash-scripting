@@ -1,2 +1,2 @@
 #!/bin/bash
-eixt 0
+exit 0
