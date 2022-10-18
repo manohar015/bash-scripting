@@ -6,5 +6,7 @@ b=abc;
 echo $a;
 echo ${a};
 
+echo "value of $d"
+
 
 
