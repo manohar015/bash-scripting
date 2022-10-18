@@ -17,11 +17,11 @@ yum install nodejs -y >>/tmp/${COMPONENT}.log
 
 stat $?
 
-echo -n "Adding $FUSER user"
-id ${FUSER} || useradd ${FUSER} >>/tmp/${COMPONENT}.log
+echo -n "Adding $FUSER user: "
+id ${FUSER} >>/tmp/${COMPONENT}.log || useradd ${FUSER} 
 stat $?
 
-echo -n "Downloading  $COMPONENT"
+echo -n "Downloading  $COMPONENT: "
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
 stat $?
 
@@ -44,3 +44,14 @@ cd $COMPONENT && npm install &>>/tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Configuring the systemd file : "
+sed -i e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${FUSER}/${COMPONENT}/systemd.service
+mv /home/${FUSER}/${COMPONENT}/systemd.service /etc/systemd/system/catalogue.service
+stat $?
+
+echo -n "Starting the service"
+
+systemctl daemon-reload &> /tmp/${COMPONENT}.log
+systemctl enable catalogue &> /tmp/${COMPONENT}.log
+systemctl start catalogue &> /tmp/${COMPONENT}.log
+
+stat $?
