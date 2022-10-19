@@ -47,7 +47,7 @@ stat $?
 echo -n "Injecting the schema"
 cd /tmp/mysql-main/
 
-mysql -u root -pRoboShop@1 <shipping.sql &>>${LOGFILE}
+mysql -u root -pRoboShop@1 < shipping.sql &>> /tmp/test.log
 stat $?
 
 echo -n "\n \n ---------$COMPONENT installation completed-------\n \n\n"
