@@ -14,6 +14,7 @@ USER_SETUP
 
 DOWNLOAD_AND_EXTRACT
 
+echo -n "Installing Pyhton: "
 cd /home/${FUSER}/${COMPONENT}/
 pip3 install -r requirements.txt &>>${LOGFILE}
 stat $?
