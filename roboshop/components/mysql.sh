@@ -39,7 +39,8 @@ fi
 
 echo -n "Downloading the schema"
 
-curl -s -L -o /tmp/mysql.zip "https://github.com/stans-robot-project/mysql/archive/main.zip" >>${LOGFILE} && unzip -o /tmp/mysql.zip &>> ${LOGFILE} 
+curl -s -L -o /tmp/mysql.zip "https://github.com/stans-robot-project/mysql/archive/main.zip" >>${LOGFILE} 
+unzip -o /tmp/mysql.zip &>> ${LOGFILE} 
 stat $?
 
 
