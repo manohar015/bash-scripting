@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 
 source components/common.sh
 COMPONENT=rabbitmq
@@ -34,3 +35,4 @@ echo -n "Configuring the $COMPONENT $FUSER Permissions: "
 rabbitmqctl set_user_tags roboshop administrator &>> ${LOGFILE} rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>> ${LOGFILE}
 stat $?
 
+echo -n "\n \n ---------$COMPONENT installation completed-------\n \n\n"
