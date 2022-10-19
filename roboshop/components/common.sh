@@ -64,7 +64,7 @@ NODEJS() {
 CONFIG_SVC() {
     echo -n "Configuring the systemd file : "
     sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'  /home/${FUSER}/${COMPONENT}/systemd.service
-    mv /home/${FUSER}/${COMPONENT}/systemd.service /etc/systemd/system/catalogue.service
+    mv /home/${FUSER}/${COMPONENT}/systemd.service /etc/systemd/system/$COMPONENT.service
     stat $?
     echo -n "Starting the service"
     systemctl daemon-reload &>> /tmp/${COMPONENT}.log
