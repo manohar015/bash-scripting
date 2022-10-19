@@ -18,7 +18,7 @@ LOGFILE=/tmp/robot.log
 DOWNLOAD_AND_EXTRACT() {
 
     echo -n "Downloading  $COMPONENT: "
-curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"  >>/tmp/${COMPONENT}.log
 stat $?
 
 echo -n "Cleanup of old $COMPONENT content: " 
