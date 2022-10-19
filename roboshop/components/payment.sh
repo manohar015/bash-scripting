@@ -19,7 +19,7 @@ pip3 install -r requirements.txt &>>${LOGFILE}
 stat $?
 
 USER_ID=${id -u roboshop}
-echo ${USER_ID}
+stat $?
 GROUP_ID=${id -g roboshop}
 
 echo -n "Updating $COMPONENT.ini file: "
