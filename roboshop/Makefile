@@ -18,3 +18,8 @@ user:
 	
 mysql:
 	bash components/mysql.sh
+
+shipping:
+	bash components/shipping.sh
+
+
