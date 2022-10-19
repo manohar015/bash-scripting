@@ -1,3 +1,6 @@
 #!/bin/bash
 
-echo " I am installing cart"
+
+source components/common.sh
+COMPONENT=cart
+NODEJS
