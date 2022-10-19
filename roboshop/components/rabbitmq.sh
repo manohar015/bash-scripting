@@ -9,7 +9,7 @@ yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erl
 stat $?
 
 echo -n "Configuring the Repo for ${COMPONENT}"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash &>> ${LOGFILE}
 stat $?
 
 echo -n "Installing Rabbitmq: "
@@ -22,7 +22,7 @@ stat $?
 
 echo -n "Creating $COMPONENT Application user: "
 
-rabbitmqctl add_user roboshop roboshop123
+rabbitmqctl add_user roboshop roboshop123 &>> ${LOGFILE}
 stat $?
 echo -n "Configuring the $COMPONENT $FUSER Permissions: "
 
