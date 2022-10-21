@@ -17,8 +17,9 @@ SGID="sg-000671b0e1fb3d069"
 
 echo "The AMI which we are using is $AMI_ID"
 create-server() {
+    echo "Inside fun"
     PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type t3.micro  --security-group-ids ${SGID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" --instance-market-options "MarketType=spot, SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}"| jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
-
+    echo "Private IP Is : ${PRIVATE_IP}"
     echo "Private IP of the created machine is $PRIVATE_IP"
     echo "Spot Instance $COMPONENT is ready: "
     echo "Creating Route53 Record . . . . :"
