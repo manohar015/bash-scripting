@@ -14,7 +14,7 @@ SGID="sg-0a992f176d3e2eb45"
 
 echo "The AMI which we are using is $AMI_ID"
 
-create-server() {
+serverstart() {
     
     PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type t3.micro  --security-group-ids ${SGID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" --instance-market-options "MarketType=spot, SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}"| jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
     echo "Private IP Is : ${PRIVATE_IP}"
@@ -31,9 +31,9 @@ if [ "$1" == "all" ] ; then
     for component in catalogue cart shipping mongodb payment rabbitmq redis mysql user frontend; do 
         COMPONENT=$component
         # calling function
-        create-server
+        serverstart
      done
 else 
-       create-server
+        serverstart
 fi 
 
