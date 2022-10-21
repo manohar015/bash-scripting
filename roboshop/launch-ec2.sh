@@ -18,14 +18,13 @@ if [ "$1" == "all" ] ; then
     for component in catalogue cart shipping mongodb payment rabbitmq redis mysql user frontend; do 
         COMPONENT=$component
         # calling function
-        create-server
+        create1-server
      done
 else 
-    echo "Inside else"
-     create-server
+        create1-server
 fi 
 
-create-server() {
+create1-server() {
     
     PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type t3.micro  --security-group-ids ${SGID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" --instance-market-options "MarketType=spot, SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}"| jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
     echo "Private IP Is : ${PRIVATE_IP}"
