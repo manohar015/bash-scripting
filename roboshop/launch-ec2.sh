@@ -24,7 +24,7 @@ serverstart() {
 
     sed -e "s/PRIVATEIP/${PRIVATE_IP}/" -e "s/COMPONENT/${COMPONENT}/" r53.json  >/tmp/record.json 
     aws route53 change-resource-record-sets --hosted-zone-id ${ZONEID} --change-batch file:///tmp/record.json | jq 
-
+}
 
 if [ "$1" == "all" ] ; then 
     for component in catalogue cart shipping mongodb payment rabbitmq redis mysql user frontend; do 
