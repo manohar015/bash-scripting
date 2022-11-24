@@ -9,7 +9,7 @@ COMPONENT=$1
 ENV=$2
 ZONEID="Z00304323CCS6RATXVYGS"
 # AMI_ID=$(aws ec2 describe-images  --filters "Name=name,Values=DevOps-LabImage-CentOS7"  | jq '.Images[].ImageId' | sed -e 's/"//g')
-AMI_ID="ami-00ff427d936335825"
+AMI_ID="ami-06876ae57f920d87d"
 SGID="sg-0a992f176d3e2eb45"
 
 echo "The AMI which we are using is $AMI_ID"
