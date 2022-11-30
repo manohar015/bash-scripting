@@ -6,7 +6,7 @@ for (( i=1; i<=10; i++ ))
 do
     if [ $i == 10 ] then
     echo "This step is in 10th line"
-    else
-    echo $i;
+    #else
+   # echo $i;
     fi
 done
