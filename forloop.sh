@@ -5,8 +5,7 @@ a=10
 b=20
 for (( i=1; i<=10; i++ ))
 do
-    if [ $i == 10 ]
-    then
+    if [ $i == 10 ] then
     echo "This step is in 10th line"
     fi
 
