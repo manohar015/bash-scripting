@@ -7,7 +7,6 @@ do
     if [ $i == 50 ] then
         echo "This is 50th line"
     else
-
-    echo -n $i
+         echo -n $i
     fi
 done
