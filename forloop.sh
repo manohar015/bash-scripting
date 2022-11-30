@@ -10,7 +10,7 @@ do
     echo "This step is in 10th line"
     fi
 
-    if [ $a -nq $b ]
+    if [ $a -ne $b ]
     then
     echo "a is equal to b"
     fi
