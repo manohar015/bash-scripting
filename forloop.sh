@@ -15,3 +15,6 @@ do
     echo "a is equal to b"
     fi
 done
+
+uptime | awk -F : '{print $NF}' | awk -F , '{print $1}'
+
