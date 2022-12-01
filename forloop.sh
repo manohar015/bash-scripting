@@ -11,7 +11,9 @@ do
 done
 
 
-load_avg= $(uptime | awk -F : '{print $NF}' | awk -F , '{print $1}')
+load_avg = $(uptime | awk -F : '{print $NF}' | awk -F , '{print $1}')
+echo $load_avg;
+
 if [ $load_avg <= 0.00 ]
 then
     echo "System load is normal"
