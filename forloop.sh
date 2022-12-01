@@ -14,4 +14,4 @@ done
 
 
 uptime | awk -F : '{print $NF}' | awk -F , '{print $1}'
-
+uptime | awk -F : '{print $NF}'
