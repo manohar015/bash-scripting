@@ -7,8 +7,6 @@ do
     if [ $i == 10  ]
     then
         echo $i;
-    else
-       # echo "Not matched"
     fi
 done
 
